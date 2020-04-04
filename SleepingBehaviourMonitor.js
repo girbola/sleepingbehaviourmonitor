@@ -144,6 +144,7 @@ async function SleepingBehaviourMonitor() {
 	// startDate = Date.parse(new Date());
 	endDate = getNewEndDate();
 	logger.info('SleepingBevaviourMonitor started. ' + ' StartDate is: ' + startDate + ' EndDate is: ' + endDate);
+	console.log('SleepingBevaviourMonitor started. ' + ' StartDate is: ' + startDate + ' EndDate is: ' + endDate);
 	let dataSynchronized = true;
 	// for (;;) {
 	while (true) {
