@@ -138,3 +138,5 @@ __pycache__
 .DS_Store
 *~
 iot.properties
+/data
+sbm.log
