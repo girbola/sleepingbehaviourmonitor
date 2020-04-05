@@ -175,7 +175,7 @@ async function SleepingBehaviourMonitor() {
 						' EEEEEEEND: ' +
 						endDate
 				);
-				logger.info('Recording has ended for this day');
+				console.log('Recording has ended for this day');
 				if (!dataSynchronized) {
 					logger.info('data will be synchronized');
 

@@ -137,6 +137,9 @@ _UpgradeReport_Files/
 __pycache__
 .DS_Store
 *~
+# === My own rules ===
 iot.properties
 /data
 sbm.log
+*.json
+*.log
