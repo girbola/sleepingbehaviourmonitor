@@ -18,6 +18,7 @@ const logger = log4js.getLogger('sbm');
 var raspberry = new Raspberry();
 var weather = new Weather();
 let https = require('https');
+let updateCounter = 0;
 
 let sleepingTotal = 0;
 let wokeUpsTotal = 0;
@@ -79,13 +80,13 @@ async function uploadDataToIoT(jsonArray, logger) {
 }
 
 async function UpdateData() {
-	let i = 0;
+	
 
 	console.log('Updating to IoTTTTTTTTTTTTTTTTTTTTTT');
 	jsonArray = [];
 	// getWeatherData(jsonArray); 17:06:09.422
 	const weatherRead = await weather.readWeatherData(jsonArray, logger);
-	logger.info('weatherRead done: ' + weatherRead);
+	logger.info('readWeatherData done: ' + weatherRead);
 
 	// getRaspberryData(sleepingTotal, wokeUpsTotal, wokeUpTimeTotal, getHoursFromDate(new Date()), jsonArray);
 	const rasp = await raspberry.getRaspberryData(
@@ -95,24 +96,25 @@ async function UpdateData() {
 		getHoursFromDate(new Date()),
 		jsonArray
 	);
-	console.log('rasp DONE: ' + rasp);
+	logger.info('getRaspberryData DONE: ' + rasp);
 	console.log('Jsonarray length is: ' + jsonArray.length);
 	if (jsonArray.length >= 1) {
 		console.log('About to update');
 		logger.info('About to update content to my.iot-ticket: ' + JSON.stringify(jsonArray));
 
 		const uploading = await uploadDataToIoT(jsonArray, logger);
-		logger.info();
-		console.log('Uploading done: ' + uploading);
+		logger.info("uploading DONE: " + uploading);
+		console.log('Waiting 10 seconds');
 		wait(10000);
-		
-		console.log('Updated');
+		logger.info('10 second waiting DONE');
+		console.log('10 second waiting DONE');
 	} else {
-		console.log('Not updating!');
+		logger.info('Not updating! ' + jsonArray.length);
 	}
 	console.log('Jsonarray length is: ' + jsonArray.length);
-	i += 1;
-	console.log('i exe: ' + i);
+	updateCounter += 1;
+	logger.info('updateCounter: ' + updateCounter);
+	console.log('updateCounter: ' + updateCounter);
 	// return true;
 }
 function getHoursFromDate(date) {
