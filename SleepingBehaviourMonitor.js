@@ -43,14 +43,14 @@ function isCancelled() {
 }
 
 async function uploadDataToIoT(jsonArray, logger) {
-	new Promise((resolve, reject) => {
-		resolve(getToken());
-	 }).then(token =>{
-		 //do you rest of the work
-		 makeRequest(token);
-	 }).catch(err =>{
-		console.error(err)
-	 })
+	// new Promise((resolve, reject) => {
+	// 	resolve(getToken());
+	//  }).then(token =>{
+	// 	 //do you rest of the work
+	// 	 makeRequest(token);
+	//  }).catch(err =>{
+	// 	console.error(err)
+	//  })
 
 	let body = '';
 	var auth =
@@ -301,14 +301,14 @@ async function SleepingBehaviourMonitor() {
 function getNewStartDate() {
 	let today = new Date();
 	today = DateFunctions.parseOnlyDate(today) + ' ' + UserSettingsInputs.earliestTimeToSleep;
-	console.log('today ' + today);
+	console.log('Start date ' + today);
 	return Date.parse(today);
 }
 function getNewEndDate() {
 	let endDate = new Date();
 	endDate.setDate(endDate.getDate() + 1);
 	let pdate = DateFunctions.parseOnlyDate(endDate);
-	console.log('pdate: ' + pdate);
+	console.log('END date parseOnlyDate: ' + pdate);
 	endDate = pdate + ' ' + UserSettingsInputs.latestTimeToWakeUp;
 	console.log('enD ' + endDate);
 	return Date.parse(endDate);

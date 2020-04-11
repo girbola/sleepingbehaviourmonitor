@@ -376,3 +376,37 @@
 [2020-04-11T11:49:06.482] [INFO] sbm - SleepingBevaviourMonitor started.  StartDate is: 1586594946000 EndDate is: 1586667600000
 [2020-04-11T11:49:07.489] [INFO] sbm - Recording started because start and end dates were in date scale
 [2020-04-11T11:49:07.490] [DEBUG] sbm - User has awaken. WokeUps are: 0 wokeUpTimeTotal: 0 sleepingTotal: 0
+[2020-04-11T12:09:07.851] [INFO] sbm - await jsonArray.push ended as planned. 6
+[2020-04-11T12:09:07.851] [INFO] sbm - readWeatherData done: 6
+[2020-04-11T12:09:07.855] [INFO] sbm - getRaspberryData DONE: 11
+[2020-04-11T12:09:07.855] [INFO] sbm - About to update content to my.iot-ticket: [{"name":"station","v":"Turku Artukainen","path":"/sbm/weather"},{"name":"timestamp","v":"2020-04-11 12:00:00","path":"/sbm/weather"},{"name":"temperature","v":"6","path":"/sbm/weather","unit":"c"},{"name":"temperature_feels_like","v":"5","path":"/sbm/weather","unit":"c"},{"name":"pressure","v":"1023.1","path":"/sbm/weather","unit":"hPa"},{"name":"humidity","v":"50","path":"/sbm/weather","unit":"%"},{"name":"illumination","v":8000,"path":"/sbm/raspberry","unit":"lx"},{"name":"temperature","v":30,"path":"/sbm/raspberry","unit":"c"},{"name":"wokeUpTimes","v":0,"path":"/sbm/raspberry","unit":""},{"name":"sleepingTotal","v":1199000,"path":"/sbm/raspberry","unit":""},{"name":"wokeUpTimeTotal","v":0,"path":"/sbm/raspberry","unit":""}]
+[2020-04-11T12:09:07.857] [INFO] sbm - Updates were send to my.iot-ticket
+[2020-04-11T12:09:07.857] [INFO] sbm - uploading DONE: true
+[2020-04-11T12:09:17.858] [INFO] sbm - 10 second waiting DONE
+[2020-04-11T12:09:17.858] [INFO] sbm - updateCounter: 1
+[2020-04-11T12:29:21.380] [INFO] sbm - await jsonArray.push ended as planned. 6
+[2020-04-11T12:29:21.380] [INFO] sbm - readWeatherData done: 6
+[2020-04-11T12:29:21.382] [INFO] sbm - getRaspberryData DONE: 11
+[2020-04-11T12:29:21.382] [INFO] sbm - About to update content to my.iot-ticket: [{"name":"station","v":"Turku Artukainen","path":"/sbm/weather"},{"name":"timestamp","v":"2020-04-11 12:10:00","path":"/sbm/weather"},{"name":"temperature","v":"6","path":"/sbm/weather","unit":"c"},{"name":"temperature_feels_like","v":"4","path":"/sbm/weather","unit":"c"},{"name":"pressure","v":"1023.1","path":"/sbm/weather","unit":"hPa"},{"name":"humidity","v":"50","path":"/sbm/weather","unit":"%"},{"name":"illumination","v":8000,"path":"/sbm/raspberry","unit":"lx"},{"name":"temperature","v":30,"path":"/sbm/raspberry","unit":"c"},{"name":"wokeUpTimes","v":0,"path":"/sbm/raspberry","unit":""},{"name":"sleepingTotal","v":2399000,"path":"/sbm/raspberry","unit":""},{"name":"wokeUpTimeTotal","v":0,"path":"/sbm/raspberry","unit":""}]
+[2020-04-11T12:29:21.384] [INFO] sbm - Updates were send to my.iot-ticket
+[2020-04-11T12:29:21.384] [INFO] sbm - uploading DONE: true
+[2020-04-11T12:29:31.386] [INFO] sbm - 10 second waiting DONE
+[2020-04-11T12:29:31.387] [INFO] sbm - updateCounter: 2
+[2020-04-11T12:49:35.376] [INFO] sbm - await jsonArray.push ended as planned. 6
+[2020-04-11T12:49:35.377] [INFO] sbm - readWeatherData done: 6
+[2020-04-11T12:49:35.380] [INFO] sbm - getRaspberryData DONE: 11
+[2020-04-11T12:49:35.380] [INFO] sbm - About to update content to my.iot-ticket: [{"name":"station","v":"Turku Artukainen","path":"/sbm/weather"},{"name":"timestamp","v":"2020-04-11 12:40:00","path":"/sbm/weather"},{"name":"temperature","v":"7","path":"/sbm/weather","unit":"c"},{"name":"temperature_feels_like","v":"4","path":"/sbm/weather","unit":"c"},{"name":"pressure","v":"1023.1","path":"/sbm/weather","unit":"hPa"},{"name":"humidity","v":"49","path":"/sbm/weather","unit":"%"},{"name":"illumination","v":8000,"path":"/sbm/raspberry","unit":"lx"},{"name":"temperature","v":30,"path":"/sbm/raspberry","unit":"c"},{"name":"wokeUpTimes","v":0,"path":"/sbm/raspberry","unit":""},{"name":"sleepingTotal","v":3599000,"path":"/sbm/raspberry","unit":""},{"name":"wokeUpTimeTotal","v":0,"path":"/sbm/raspberry","unit":""}]
+[2020-04-11T12:49:35.382] [INFO] sbm - Updates were send to my.iot-ticket
+[2020-04-11T12:49:35.382] [INFO] sbm - uploading DONE: true
+[2020-04-11T12:49:45.384] [INFO] sbm - 10 second waiting DONE
+[2020-04-11T12:49:45.385] [INFO] sbm - updateCounter: 3
+[2020-04-11T12:49:46.406] [INFO] sbm - Awake Temp is set to 17? = 17 temperature_Array length: 1
+[2020-04-11T12:49:47.408] [DEBUG] sbm - Sleeping ended. WokeUps are: 1 wokeUpTimeTotal: 0 sleepingTotal: 3600000
+[2020-04-11T12:52:58.274] [DEBUG] sbm - UserSettingsInputs: 20:00:00
+[2020-04-11T12:52:58.276] [DEBUG] sbm - UserSettingsInputs: 08:00:00
+[2020-04-11T12:52:58.276] [DEBUG] sbm - UserSettingsInputs: John Doe
+[2020-04-11T12:52:58.277] [DEBUG] sbm - UserSettingsInputs: 41
+[2020-04-11T12:52:58.277] [DEBUG] sbm - UserSettingsInputs: Turku
+[2020-04-11T12:52:58.290] [INFO] sbm - SleepingBevaviourMonitor started.  StartDate is: 1586598778000 EndDate is: 1586667600000
+[2020-04-11T12:52:59.297] [INFO] sbm - Recording started because start and end dates were in date scale
+[2020-04-11T12:52:59.298] [DEBUG] sbm - User has awaken. WokeUps are: 0 wokeUpTimeTotal: 0 sleepingTotal: 0
