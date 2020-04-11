@@ -123,11 +123,16 @@ async function UpdateData() {
 	// return true;
 }
 function getHoursFromDate(date) {
-	if (date.getHours() * 60 + date.getMinutes() >= 91) {
-		return date.getHours() + 1;
+	let hour = date.getHours();
+	if (date.getMinutes() >= 31) {
+		if ((hour + 1) != 24) {
+			return date.getHours() + 1;
+		}
+		return 0;
 	}
 	return date.getHours();
 }
+
 let startDate;
 let endDate;
 /*
