@@ -167,7 +167,7 @@ async function SleepingBehaviourMonitor() {
 				// await HandleWeather();
 			} else {
 				//Out of date scale
-				console.log(
+			/*	console.log(
 					'current: ' +
 						currentTime +
 						' Date scale out of range : START: ' +
@@ -176,6 +176,7 @@ async function SleepingBehaviourMonitor() {
 						endDate
 				);
 				console.log('Recording has ended for this day');
+			*/
 				if (!dataSynchronized) {
 					logger.info('data will be synchronized');
 

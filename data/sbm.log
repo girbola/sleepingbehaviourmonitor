@@ -99,3 +99,76 @@
 [2020-04-04T22:22:57.628] [INFO] sbm - About to update content to my.iot-ticket: [{"name":"station","v":"Turku Artukainen","path":"/sbm/weather"},{"name":"timestamp","v":"2020-04-04 22:10:00","path":"/sbm/weather"},{"name":"temperature","v":"0","path":"/sbm/weather","unit":"c"},{"name":"temperature_feels_like","v":"-2","path":"/sbm/weather","unit":"c"},{"name":"pressure","v":"1019.3","path":"/sbm/weather","unit":"hPa"},{"name":"humidity","v":"55","path":"/sbm/weather","unit":"%"},{"name":"illumination","v":0,"path":"/sbm/raspberry","unit":"lx"},{"name":"temperature","v":30,"path":"/sbm/raspberry","unit":"c"},{"name":"wokeUpTimes","v":0,"path":"/sbm/raspberry","unit":""},{"name":"sleepingTotal","v":1199000,"path":"/sbm/raspberry","unit":""},{"name":"wokeUpTimeTotal","v":0,"path":"/sbm/raspberry","unit":""}]
 [2020-04-04T22:22:57.635] [INFO] sbm - Updates were send to my.iot-ticket
 [2020-04-04T22:22:57.636] [INFO] sbm - 
+[2020-04-10T14:17:08.511] [DEBUG] sbm - UserSettingsInputs: 20:00:00
+[2020-04-10T14:17:08.514] [DEBUG] sbm - UserSettingsInputs: 08:00:00
+[2020-04-10T14:17:08.514] [DEBUG] sbm - UserSettingsInputs: John Doe
+[2020-04-10T14:17:08.514] [DEBUG] sbm - UserSettingsInputs: 41
+[2020-04-10T14:17:08.514] [DEBUG] sbm - UserSettingsInputs: Turku
+[2020-04-10T14:17:08.514] [DEBUG] sbm - UserSettingsInputs: 41
+[2020-04-10T14:17:08.527] [INFO] sbm - SleepingBevaviourMonitor started.  StartDate is: 1586538000000 EndDate is: 1586581200000
+[2020-04-10T14:30:31.071] [DEBUG] sbm - UserSettingsInputs: 20:00:00
+[2020-04-10T14:30:31.073] [DEBUG] sbm - UserSettingsInputs: 08:00:00
+[2020-04-10T14:30:31.073] [DEBUG] sbm - UserSettingsInputs: John Doe
+[2020-04-10T14:30:31.074] [DEBUG] sbm - UserSettingsInputs: 41
+[2020-04-10T14:30:31.074] [DEBUG] sbm - UserSettingsInputs: Turku
+[2020-04-10T14:30:31.074] [DEBUG] sbm - UserSettingsInputs: 41
+[2020-04-10T14:30:31.083] [INFO] sbm - SleepingBevaviourMonitor started.  StartDate is: 1586538000000 EndDate is: 1586581200000
+[2020-04-10T14:31:53.152] [DEBUG] sbm - UserSettingsInputs: 20:00:00
+[2020-04-10T14:31:53.154] [DEBUG] sbm - UserSettingsInputs: 08:00:00
+[2020-04-10T14:31:53.154] [DEBUG] sbm - UserSettingsInputs: John Doe
+[2020-04-10T14:31:53.154] [DEBUG] sbm - UserSettingsInputs: 41
+[2020-04-10T14:31:53.154] [DEBUG] sbm - UserSettingsInputs: Turku
+[2020-04-10T14:31:53.154] [DEBUG] sbm - UserSettingsInputs: 41
+[2020-04-10T14:31:53.162] [INFO] sbm - SleepingBevaviourMonitor started.  StartDate is: 1586538000000 EndDate is: 1586581200000
+[2020-04-10T20:20:14.475] [INFO] sbm - About to update content to my.iot-ticket: [{"name":"station","v":"Turku Artukainen","path":"/sbm/weather"},{"name":"timestamp","v":"2020-04-10 20:00:00","path":"/sbm/weather"},{"name":"temperature","v":"4","path":"/sbm/weather","unit":"c"},{"name":"temperature_feels_like","v":"0","path":"/sbm/weather","unit":"c"},{"name":"pressure","v":"1019.6","path":"/sbm/weather","unit":"hPa"},{"name":"humidity","v":"56","path":"/sbm/weather","unit":"%"},{"name":"illumination","v":0,"path":"/sbm/raspberry","unit":"lx"},{"name":"temperature","v":30,"path":"/sbm/raspberry","unit":"c"},{"name":"wokeUpTimes","v":0,"path":"/sbm/raspberry","unit":""},{"name":"sleepingTotal","v":1199000,"path":"/sbm/raspberry","unit":""},{"name":"wokeUpTimeTotal","v":0,"path":"/sbm/raspberry","unit":""}]
+[2020-04-10T20:20:14.478] [INFO] sbm - Updates were send to my.iot-ticket
+[2020-04-10T20:20:14.478] [INFO] sbm - 
+[2020-04-10T20:40:34.883] [INFO] sbm - About to update content to my.iot-ticket: [{"name":"station","v":"Turku Artukainen","path":"/sbm/weather"},{"name":"timestamp","v":"2020-04-10 20:30:00","path":"/sbm/weather"},{"name":"temperature","v":"3","path":"/sbm/weather","unit":"c"},{"name":"temperature_feels_like","v":"0","path":"/sbm/weather","unit":"c"},{"name":"pressure","v":"1019.9","path":"/sbm/weather","unit":"hPa"},{"name":"humidity","v":"65","path":"/sbm/weather","unit":"%"},{"name":"illumination","v":0,"path":"/sbm/raspberry","unit":"lx"},{"name":"temperature","v":30,"path":"/sbm/raspberry","unit":"c"},{"name":"wokeUpTimes","v":0,"path":"/sbm/raspberry","unit":""},{"name":"sleepingTotal","v":2399000,"path":"/sbm/raspberry","unit":""},{"name":"wokeUpTimeTotal","v":0,"path":"/sbm/raspberry","unit":""}]
+[2020-04-10T20:40:34.885] [INFO] sbm - Updates were send to my.iot-ticket
+[2020-04-10T20:40:34.885] [INFO] sbm - 
+[2020-04-10T21:00:55.103] [INFO] sbm - About to update content to my.iot-ticket: [{"name":"station","v":"Turku Artukainen","path":"/sbm/weather"},{"name":"timestamp","v":"2020-04-10 20:40:00","path":"/sbm/weather"},{"name":"temperature","v":"3","path":"/sbm/weather","unit":"c"},{"name":"temperature_feels_like","v":"0","path":"/sbm/weather","unit":"c"},{"name":"pressure","v":"1019.9","path":"/sbm/weather","unit":"hPa"},{"name":"humidity","v":"68","path":"/sbm/weather","unit":"%"},{"name":"illumination","v":0,"path":"/sbm/raspberry","unit":"lx"},{"name":"temperature","v":30,"path":"/sbm/raspberry","unit":"c"},{"name":"wokeUpTimes","v":0,"path":"/sbm/raspberry","unit":""},{"name":"sleepingTotal","v":3599000,"path":"/sbm/raspberry","unit":""},{"name":"wokeUpTimeTotal","v":0,"path":"/sbm/raspberry","unit":""}]
+[2020-04-10T21:00:55.104] [INFO] sbm - Updates were send to my.iot-ticket
+[2020-04-10T21:00:55.104] [INFO] sbm - 
+[2020-04-10T21:01:06.117] [INFO] sbm - Awake Temp is set to 17? = 17 temperature_Array length: 1
+[2020-04-10T21:01:07.122] [DEBUG] sbm - Sleeping ended. WokeUps are: 1 wokeUpTimeTotal: 0 sleepingTotal: 3600000
+[2020-04-10T21:11:10.893] [INFO] sbm - User is Sleeping - Temp changed to 30? = 30
+[2020-04-10T21:11:11.903] [DEBUG] sbm - Sleeping. WokeUps are: 1 wokeUpTimeTotal: 600000 sleepingTotal: 3600000
+[2020-04-10T21:21:15.085] [INFO] sbm - About to update content to my.iot-ticket: [{"name":"station","v":"Turku Artukainen","path":"/sbm/weather"},{"name":"timestamp","v":"2020-04-10 21:10:00","path":"/sbm/weather"},{"name":"temperature","v":"3","path":"/sbm/weather","unit":"c"},{"name":"temperature_feels_like","v":"0","path":"/sbm/weather","unit":"c"},{"name":"pressure","v":"1020.2","path":"/sbm/weather","unit":"hPa"},{"name":"humidity","v":"72","path":"/sbm/weather","unit":"%"},{"name":"illumination","v":0,"path":"/sbm/raspberry","unit":"lx"},{"name":"temperature","v":24,"path":"/sbm/raspberry","unit":"c"},{"name":"wokeUpTimes","v":1,"path":"/sbm/raspberry","unit":""},{"name":"sleepingTotal","v":4199000,"path":"/sbm/raspberry","unit":""},{"name":"wokeUpTimeTotal","v":600000,"path":"/sbm/raspberry","unit":""}]
+[2020-04-10T21:21:15.087] [INFO] sbm - Updates were send to my.iot-ticket
+[2020-04-10T21:21:15.087] [INFO] sbm - 
+[2020-04-10T21:41:34.454] [INFO] sbm - About to update content to my.iot-ticket: [{"name":"station","v":"Turku Artukainen","path":"/sbm/weather"},{"name":"timestamp","v":"2020-04-10 21:30:00","path":"/sbm/weather"},{"name":"temperature","v":"2","path":"/sbm/weather","unit":"c"},{"name":"temperature_feels_like","v":"0","path":"/sbm/weather","unit":"c"},{"name":"pressure","v":"1020.4","path":"/sbm/weather","unit":"hPa"},{"name":"humidity","v":"72","path":"/sbm/weather","unit":"%"},{"name":"illumination","v":0,"path":"/sbm/raspberry","unit":"lx"},{"name":"temperature","v":24,"path":"/sbm/raspberry","unit":"c"},{"name":"wokeUpTimes","v":1,"path":"/sbm/raspberry","unit":""},{"name":"sleepingTotal","v":5399000,"path":"/sbm/raspberry","unit":""},{"name":"wokeUpTimeTotal","v":600000,"path":"/sbm/raspberry","unit":""}]
+[2020-04-10T21:41:34.455] [INFO] sbm - Updates were send to my.iot-ticket
+[2020-04-10T21:41:34.455] [INFO] sbm - 
+[2020-04-10T22:01:54.085] [INFO] sbm - About to update content to my.iot-ticket: [{"name":"station","v":"Turku Artukainen","path":"/sbm/weather"},{"name":"timestamp","v":"2020-04-10 21:50:00","path":"/sbm/weather"},{"name":"temperature","v":"2","path":"/sbm/weather","unit":"c"},{"name":"temperature_feels_like","v":"0","path":"/sbm/weather","unit":"c"},{"name":"pressure","v":"1020.5","path":"/sbm/weather","unit":"hPa"},{"name":"humidity","v":"74","path":"/sbm/weather","unit":"%"},{"name":"illumination","v":0,"path":"/sbm/raspberry","unit":"lx"},{"name":"temperature","v":24,"path":"/sbm/raspberry","unit":"c"},{"name":"wokeUpTimes","v":1,"path":"/sbm/raspberry","unit":""},{"name":"sleepingTotal","v":6599000,"path":"/sbm/raspberry","unit":""},{"name":"wokeUpTimeTotal","v":600000,"path":"/sbm/raspberry","unit":""}]
+[2020-04-10T22:01:54.086] [INFO] sbm - Updates were send to my.iot-ticket
+[2020-04-10T22:01:54.087] [INFO] sbm - 
+[2020-04-10T22:12:09.728] [INFO] sbm - Awake Temp is set to 17? = 17 temperature_Array length: 3
+[2020-04-10T22:12:10.743] [DEBUG] sbm - Sleeping ended. WokeUps are: 2 wokeUpTimeTotal: 600000 sleepingTotal: 7200000
+[2020-04-10T22:22:13.860] [INFO] sbm - About to update content to my.iot-ticket: [{"name":"station","v":"Turku Artukainen","path":"/sbm/weather"},{"name":"timestamp","v":"2020-04-10 22:00:00","path":"/sbm/weather"},{"name":"temperature","v":"2","path":"/sbm/weather","unit":"c"},{"name":"temperature_feels_like","v":"0","path":"/sbm/weather","unit":"c"},{"name":"pressure","v":"1020.6","path":"/sbm/weather","unit":"hPa"},{"name":"humidity","v":"75","path":"/sbm/weather","unit":"%"},{"name":"illumination","v":0,"path":"/sbm/raspberry","unit":"lx"},{"name":"temperature","v":21,"path":"/sbm/raspberry","unit":"c"},{"name":"wokeUpTimes","v":2,"path":"/sbm/raspberry","unit":""},{"name":"sleepingTotal","v":7200000,"path":"/sbm/raspberry","unit":""},{"name":"wokeUpTimeTotal","v":1199000,"path":"/sbm/raspberry","unit":""}]
+[2020-04-10T22:22:13.861] [INFO] sbm - Updates were send to my.iot-ticket
+[2020-04-10T22:22:13.862] [INFO] sbm - 
+[2020-04-10T22:22:24.868] [INFO] sbm - User is Sleeping - Temp changed to 30? = 30
+[2020-04-10T22:22:25.874] [DEBUG] sbm - Sleeping. WokeUps are: 2 wokeUpTimeTotal: 1200000 sleepingTotal: 7200000
+[2020-04-10T22:42:34.294] [INFO] sbm - About to update content to my.iot-ticket: [{"name":"station","v":"Turku Artukainen","path":"/sbm/weather"},{"name":"timestamp","v":"2020-04-10 22:30:00","path":"/sbm/weather"},{"name":"temperature","v":"1","path":"/sbm/weather","unit":"c"},{"name":"temperature_feels_like","v":"-1","path":"/sbm/weather","unit":"c"},{"name":"pressure","v":"1020.8","path":"/sbm/weather","unit":"hPa"},{"name":"humidity","v":"77","path":"/sbm/weather","unit":"%"},{"name":"illumination","v":0,"path":"/sbm/raspberry","unit":"lx"},{"name":"temperature","v":24,"path":"/sbm/raspberry","unit":"c"},{"name":"wokeUpTimes","v":2,"path":"/sbm/raspberry","unit":""},{"name":"sleepingTotal","v":8399000,"path":"/sbm/raspberry","unit":""},{"name":"wokeUpTimeTotal","v":1200000,"path":"/sbm/raspberry","unit":""}]
+[2020-04-10T22:42:34.295] [INFO] sbm - Updates were send to my.iot-ticket
+[2020-04-10T22:42:34.295] [INFO] sbm - 
+[2020-04-10T23:02:54.681] [INFO] sbm - About to update content to my.iot-ticket: [{"name":"station","v":"Turku Artukainen","path":"/sbm/weather"},{"name":"timestamp","v":"2020-04-10 22:50:00","path":"/sbm/weather"},{"name":"temperature","v":"1","path":"/sbm/weather","unit":"c"},{"name":"temperature_feels_like","v":"-1","path":"/sbm/weather","unit":"c"},{"name":"pressure","v":"1020.9","path":"/sbm/weather","unit":"hPa"},{"name":"humidity","v":"79","path":"/sbm/weather","unit":"%"},{"name":"illumination","path":"/sbm/raspberry","unit":"lx"},{"name":"temperature","v":24,"path":"/sbm/raspberry","unit":"c"},{"name":"wokeUpTimes","v":2,"path":"/sbm/raspberry","unit":""},{"name":"sleepingTotal","v":9599000,"path":"/sbm/raspberry","unit":""},{"name":"wokeUpTimeTotal","v":1200000,"path":"/sbm/raspberry","unit":""}]
+[2020-04-10T23:02:54.682] [INFO] sbm - Updates were send to my.iot-ticket
+[2020-04-10T23:02:54.682] [INFO] sbm - 
+[2020-04-10T23:23:07.579] [INFO] sbm - About to update content to my.iot-ticket: [{"name":"station","v":"Turku Artukainen","path":"/sbm/weather"},{"name":"timestamp","v":"2020-04-10 23:10:00","path":"/sbm/weather"},{"name":"temperature","v":"1","path":"/sbm/weather","unit":"c"},{"name":"temperature_feels_like","v":"1","path":"/sbm/weather","unit":"c"},{"name":"pressure","v":"1021.0","path":"/sbm/weather","unit":"hPa"},{"name":"humidity","v":"79","path":"/sbm/weather","unit":"%"},{"name":"illumination","path":"/sbm/raspberry","unit":"lx"},{"name":"temperature","v":24,"path":"/sbm/raspberry","unit":"c"},{"name":"wokeUpTimes","v":2,"path":"/sbm/raspberry","unit":""},{"name":"sleepingTotal","v":10799000,"path":"/sbm/raspberry","unit":""},{"name":"wokeUpTimeTotal","v":1200000,"path":"/sbm/raspberry","unit":""}]
+[2020-04-10T23:23:07.581] [INFO] sbm - Updates were send to my.iot-ticket
+[2020-04-10T23:23:07.581] [INFO] sbm - 
+[2020-04-10T23:23:18.582] [INFO] sbm - Awake Temp is set to 17? = 17 temperature_Array length: 5
+[2020-04-10T23:23:19.583] [DEBUG] sbm - Sleeping ended. WokeUps are: 3 wokeUpTimeTotal: 1200000 sleepingTotal: 10800000
+[2020-04-10T23:33:20.337] [INFO] sbm - User is Sleeping - Temp changed to 30? = 30
+[2020-04-10T23:33:21.346] [DEBUG] sbm - Sleeping. WokeUps are: 3 wokeUpTimeTotal: 1800000 sleepingTotal: 10800000
+[2020-04-10T23:43:23.422] [INFO] sbm - About to update content to my.iot-ticket: [{"name":"station","v":"Turku Artukainen","path":"/sbm/weather"},{"name":"timestamp","v":"2020-04-10 23:30:00","path":"/sbm/weather"},{"name":"temperature","v":"0","path":"/sbm/weather","unit":"c"},{"name":"temperature_feels_like","v":"0","path":"/sbm/weather","unit":"c"},{"name":"pressure","v":"1021.1","path":"/sbm/weather","unit":"hPa"},{"name":"humidity","v":"83","path":"/sbm/weather","unit":"%"},{"name":"illumination","path":"/sbm/raspberry","unit":"lx"},{"name":"temperature","v":24,"path":"/sbm/raspberry","unit":"c"},{"name":"wokeUpTimes","v":3,"path":"/sbm/raspberry","unit":""},{"name":"sleepingTotal","v":11399000,"path":"/sbm/raspberry","unit":""},{"name":"wokeUpTimeTotal","v":1800000,"path":"/sbm/raspberry","unit":""}]
+[2020-04-10T23:43:23.423] [INFO] sbm - Updates were send to my.iot-ticket
+[2020-04-10T23:43:23.423] [INFO] sbm - 
+[2020-04-11T00:02:59.682] [DEBUG] sbm - UserSettingsInputs: 20:00:00
+[2020-04-11T00:02:59.684] [DEBUG] sbm - UserSettingsInputs: 08:00:00
+[2020-04-11T00:02:59.685] [DEBUG] sbm - UserSettingsInputs: John Doe
+[2020-04-11T00:02:59.685] [DEBUG] sbm - UserSettingsInputs: 41
+[2020-04-11T00:02:59.685] [DEBUG] sbm - UserSettingsInputs: Turku
+[2020-04-11T00:02:59.685] [DEBUG] sbm - UserSettingsInputs: 41
+[2020-04-11T00:02:59.694] [INFO] sbm - SleepingBevaviourMonitor started.  StartDate is: 1586624400000 EndDate is: 1586667600000
