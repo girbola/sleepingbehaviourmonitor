@@ -32,7 +32,6 @@ logger.debug('UserSettingsInputs: ' + UserSettingsInputs.latestTimeToWakeUp);
 logger.debug('UserSettingsInputs: ' + UserSettingsInputs.name);
 logger.debug('UserSettingsInputs: ' + UserSettingsInputs.age);
 logger.debug('UserSettingsInputs: ' + UserSettingsInputs.location);
-logger.debug('UserSettingsInputs: ' + UserSettingsInputs.age);
 
 let cancelled = false;
 let jsonArray = [];
@@ -65,7 +64,7 @@ async function uploadDataToIoT(jsonArray, logger) {
 		//On end of the request, run what we need to
 		response.on('end', function () {
 			//Do Something with the data
-			console.log(body);
+			console.log('RESPONSE BODY IS: ' + body);
 		});
 	});
 	console.log('about to write req.write. jsonArray.length: ' + jsonArray.length);
@@ -81,7 +80,6 @@ async function uploadDataToIoT(jsonArray, logger) {
 
 async function UpdateData() {
 	
-
 	console.log('Updating to IoTTTTTTTTTTTTTTTTTTTTTT');
 	jsonArray = [];
 	// getWeatherData(jsonArray); 17:06:09.422
@@ -143,8 +141,8 @@ async function SleepingBehaviourMonitor() {
 	let wokeUp = false;
 	let sleeping = true;
 	let timer = 1000;
-	startDate = getNewStartDate();
-	// startDate = Date.parse(new Date());
+	// startDate = getNewStartDate();
+	startDate = Date.parse(new Date());
 	endDate = getNewEndDate();
 	logger.info('SleepingBevaviourMonitor started. ' + ' StartDate is: ' + startDate + ' EndDate is: ' + endDate);
 	console.log('SleepingBevaviourMonitor started. ' + ' StartDate is: ' + startDate + ' EndDate is: ' + endDate);

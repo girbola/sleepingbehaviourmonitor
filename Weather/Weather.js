@@ -1,4 +1,4 @@
-function Weather() {}
+function Weather() { }
 const request = require('request');
 const PropertiesReader = require('properties-reader');
 const properties = new PropertiesReader('./data/iot.properties');
@@ -9,63 +9,28 @@ console.log('Updating weather');
 let weatherDataArray_tmp = [];
 const path = '/sbm/weather';
 
-Weather.prototype.readWeatherData = async function(jsonArray, logger) {
+Weather.prototype.readWeatherData = async function (jsonArray, logger) {
 	console.log('Json array lenght isssssssssssssssssssssssssssssss: ' + jsonArray.length);
 	weatherDataArray_tmp = [];
-	// async function get_Weather() {
-	// 	try {
-	// 		const response = await fetch('https://www.voacap.com/geo/weather.html?city=Turku');
-	// 		console.log('Response::: ' + response.url);
-	// 		const body = await response.text();
-	// 		// console.log(json);
-	// 		weatherDataArray_tmp(body);
-	// 		return body;
-	// 	} catch (error) {
-	// 		console.error(error);
-	// 	}
-	// }
-	// fetch('https://www.voacap.com/geo/weather.html?city=Turku').then(function(r) {
-	// 	weatherDataArray_tmp.push(r.text());
-	// return r.text();
-	// }).then(function(d) {
-	// 	console.log("DDD: " + d);
-	// });
 
-	// get_Weather();
-
-	// await fetch('https://www.voacap.com/geo/weather.html?city=Turku')
-	// 		.then(response => {
-	// 			if (response.ok) {
-	// 				response.text();
-	// 				console.log('Response was: ' + response);
-	// 			} else {
-	// 				console.error('Responce was: ' + response);
-	// 			}
-	// 		})
-	// 		.then(body => {
-	// 			weatherDataArray_tmp(body);
-	// 			setDataToIOTTicket(weatherDataArray_tmp);
-	// 		})
-	// 		.catch(err => console.error(err));
 	return new Promise(resolve => {
-		request('https://www.voacap.com/geo/weather.html?city=Turku', function(err, response, body) {
+		request('https://www.voacap.com/geo/weather.html?city=Turku', function (err, response, body) {
 			console.log('requesting');
 			if (err) {
-				logger.info('Responce is: ' + response);
-				logger.info('error: ' + error);
+				logger.info('Error occured fetching weather data: ' + error + ' response is: ' + response);
 			} else {
 				weatherDataArray_tmp.push(body);
 				console.log('======================================jsonArray length is: ' + jsonArray.length);
-				setDataToIOTTicket(jsonArray);
+				setDataToIOTTicket(jsonArray, logger);
 				resolve(jsonArray.length);
 			}
 		});
-		setTimeout
+		// setTimeout
 		console.log('requesting: ' + weatherDataArray_tmp.length);
 	});
 };
 
-async function setDataToIOTTicket(jsonArray) {
+async function setDataToIOTTicket(jsonArray, logger) {
 	console.log('Setting data to IOT');
 	let station = {};
 	let temperature = {};
@@ -104,9 +69,9 @@ async function setDataToIOTTicket(jsonArray) {
 			temperature_feels_like.unit = properties.get('weather.feels_like_unit');
 			console.log(
 				'temperature_feels_like: ' +
-					temperature_feels_like.name +
-					' temperature_feels_like value: ' +
-					temperature_feels_like.v
+				temperature_feels_like.name +
+				' temperature_feels_like value: ' +
+				temperature_feels_like.v
 			);
 
 			pressure.name = properties.get('weather.pressure_name');
