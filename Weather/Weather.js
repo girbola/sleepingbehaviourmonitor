@@ -9,7 +9,7 @@ console.log('Updating weather');
 let weatherDataArray_tmp = [];
 const path = '/sbm/weather';
 
-Weather.prototype.readWeatherData = async function(jsonArray) {
+Weather.prototype.readWeatherData = async function(jsonArray, logger) {
 	console.log('Json array lenght isssssssssssssssssssssssssssssss: ' + jsonArray.length);
 	weatherDataArray_tmp = [];
 	// async function get_Weather() {
@@ -51,8 +51,8 @@ Weather.prototype.readWeatherData = async function(jsonArray) {
 		request('https://www.voacap.com/geo/weather.html?city=Turku', function(err, response, body) {
 			console.log('requesting');
 			if (err) {
-				console.log('Responce is: ' + response);
-				console.log('error: ' + error);
+				logger.info('Responce is: ' + response);
+				logger.info('error: ' + error);
 			} else {
 				weatherDataArray_tmp.push(body);
 				console.log('======================================jsonArray length is: ' + jsonArray.length);
@@ -60,6 +60,7 @@ Weather.prototype.readWeatherData = async function(jsonArray) {
 				resolve(jsonArray.length);
 			}
 		});
+		setTimeout
 		console.log('requesting: ' + weatherDataArray_tmp.length);
 	});
 };
@@ -127,5 +128,6 @@ async function setDataToIOTTicket(jsonArray) {
 
 	await jsonArray.push(station, timeStamp, temperature, temperature_feels_like, pressure, humidity);
 	console.log('station END length: ' + jsonArray.length);
+	logger.info("await jsonArray.push ended as planned. " + jsonArray.length);
 }
 module.exports = Weather;
