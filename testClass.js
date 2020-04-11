@@ -32,7 +32,7 @@ function getHoursFromDate(date) {
 	let hour = date.getHours();
 
 	if (date.getMinutes() >= 31) {
-		if ((hour + 1) != 24) {
+		if (hour + 1 != 24) {
 			return date.getHours() + 1;
 		}
 		return 0;
@@ -41,7 +41,5 @@ function getHoursFromDate(date) {
 	return date.getHours();
 }
 
-for (let i = 0; i < 24; i++) {
-	var d = getHoursFromDate(new Date('2020-04-10T' + twoDigitConvert(i) + ':29:54.681'));
-	console.log(' d: ' + d);
-}
+var d = getHoursFromDate(new Date('2020-04-10T' + 22 + ':31:54.681'));
+console.log(' d: ' + d);
