@@ -359,3 +359,20 @@
 [2020-04-11T11:38:05.467] [INFO] sbm - 10 second waiting DONE
 [2020-04-11T11:38:09.726] [INFO] sbm - updateCounter: 1
 [2020-04-11T11:38:55.998] [INFO] sbm - await jsonArray.push ended as planned. 6
+[2020-04-11T11:48:48.779] [DEBUG] sbm - UserSettingsInputs: 20:00:00
+[2020-04-11T11:48:48.781] [DEBUG] sbm - UserSettingsInputs: 08:00:00
+[2020-04-11T11:48:48.781] [DEBUG] sbm - UserSettingsInputs: John Doe
+[2020-04-11T11:48:48.781] [DEBUG] sbm - UserSettingsInputs: 41
+[2020-04-11T11:48:48.781] [DEBUG] sbm - UserSettingsInputs: Turku
+[2020-04-11T11:48:48.793] [INFO] sbm - SleepingBevaviourMonitor started.  StartDate is: 1586594928000 EndDate is: 1586667600000
+[2020-04-11T11:48:49.796] [INFO] sbm - Recording started because start and end dates were in date scale
+[2020-04-11T11:48:49.797] [DEBUG] sbm - User has awaken. WokeUps are: 0 wokeUpTimeTotal: 0 sleepingTotal: 0
+[2020-04-11T11:48:51.526] [INFO] sbm - await jsonArray.push ended as planned. 6
+[2020-04-11T11:49:06.467] [DEBUG] sbm - UserSettingsInputs: 20:00:00
+[2020-04-11T11:49:06.469] [DEBUG] sbm - UserSettingsInputs: 08:00:00
+[2020-04-11T11:49:06.469] [DEBUG] sbm - UserSettingsInputs: John Doe
+[2020-04-11T11:49:06.469] [DEBUG] sbm - UserSettingsInputs: 41
+[2020-04-11T11:49:06.469] [DEBUG] sbm - UserSettingsInputs: Turku
+[2020-04-11T11:49:06.482] [INFO] sbm - SleepingBevaviourMonitor started.  StartDate is: 1586594946000 EndDate is: 1586667600000
+[2020-04-11T11:49:07.489] [INFO] sbm - Recording started because start and end dates were in date scale
+[2020-04-11T11:49:07.490] [DEBUG] sbm - User has awaken. WokeUps are: 0 wokeUpTimeTotal: 0 sleepingTotal: 0

@@ -24,8 +24,8 @@ let updateCounter = 0;
 let sleepingTotal = 0;
 let wokeUpsTotal = 0;
 let wokeUpTimeTotal = 0;
-// const updateIotInterval = 1200000;
-const updateIotInterval = 1200;
+const updateIotInterval = 1200000;
+// const updateIotInterval = 1200;
 let updateIotIntervalCounter = updateIotInterval;
 
 let cronRunning = true;
@@ -43,6 +43,15 @@ function isCancelled() {
 }
 
 async function uploadDataToIoT(jsonArray, logger) {
+	new Promise((resolve, reject) => {
+		resolve(getToken());
+	 }).then(token =>{
+		 //do you rest of the work
+		 makeRequest(token);
+	 }).catch(err =>{
+		console.error(err)
+	 })
+
 	let body = '';
 	var auth =
 		'Basic ' +
