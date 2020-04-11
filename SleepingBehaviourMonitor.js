@@ -90,14 +90,10 @@ async function uploadDataToIoT(jsonArray, logger) {
 }
 
 async function UpdateData() {
-
-	console.log('Updating to IoTTTTTTTTTTTTTTTTTTTTTT');
+	console.log('UpdatinUpdateData started');
 	jsonArray = [];
-	// getWeatherData(jsonArray); 17:06:09.422
 	const weatherRead = await weather.readWeatherData(jsonArray, logger);
 	logger.info('readWeatherData done: ' + weatherRead);
-
-	// getRaspberryData(sleepingTotal, wokeUpsTotal, wokeUpTimeTotal, getHoursFromDate(new Date()), jsonArray);
 	const rasp = await raspberry.getRaspberryData(
 		sleepingTotal,
 		wokeUpsTotal,

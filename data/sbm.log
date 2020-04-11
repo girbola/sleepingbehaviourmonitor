@@ -410,3 +410,43 @@
 [2020-04-11T12:52:58.290] [INFO] sbm - SleepingBevaviourMonitor started.  StartDate is: 1586598778000 EndDate is: 1586667600000
 [2020-04-11T12:52:59.297] [INFO] sbm - Recording started because start and end dates were in date scale
 [2020-04-11T12:52:59.298] [DEBUG] sbm - User has awaken. WokeUps are: 0 wokeUpTimeTotal: 0 sleepingTotal: 0
+[2020-04-11T13:01:51.914] [DEBUG] sbm - UserSettingsInputs: 20:00:00
+[2020-04-11T13:01:51.916] [DEBUG] sbm - UserSettingsInputs: 08:00:00
+[2020-04-11T13:01:51.916] [DEBUG] sbm - UserSettingsInputs: John Doe
+[2020-04-11T13:01:51.917] [DEBUG] sbm - UserSettingsInputs: 41
+[2020-04-11T13:01:51.917] [DEBUG] sbm - UserSettingsInputs: Turku
+[2020-04-11T13:01:51.930] [INFO] sbm - SleepingBevaviourMonitor started.  StartDate is: 1586599311000 EndDate is: 1586667600000
+[2020-04-11T13:01:52.946] [INFO] sbm - Recording started because start and end dates were in date scale
+[2020-04-11T13:01:52.947] [DEBUG] sbm - User has awaken. WokeUps are: 0 wokeUpTimeTotal: 0 sleepingTotal: 0
+[2020-04-11T13:02:18.613] [DEBUG] sbm - UserSettingsInputs: 20:00:00
+[2020-04-11T13:02:18.615] [DEBUG] sbm - UserSettingsInputs: 08:00:00
+[2020-04-11T13:02:18.615] [DEBUG] sbm - UserSettingsInputs: John Doe
+[2020-04-11T13:02:18.615] [DEBUG] sbm - UserSettingsInputs: 41
+[2020-04-11T13:02:18.616] [DEBUG] sbm - UserSettingsInputs: Turku
+[2020-04-11T13:02:18.628] [INFO] sbm - SleepingBevaviourMonitor started.  StartDate is: 1586599338000 EndDate is: 1586667600000
+[2020-04-11T13:02:19.643] [INFO] sbm - Recording started because start and end dates were in date scale
+[2020-04-11T13:02:19.644] [DEBUG] sbm - User has awaken. WokeUps are: 0 wokeUpTimeTotal: 0 sleepingTotal: 0
+[2020-04-11T13:03:52.304] [DEBUG] sbm - UserSettingsInputs: 20:00:00
+[2020-04-11T13:03:52.306] [DEBUG] sbm - UserSettingsInputs: 08:00:00
+[2020-04-11T13:03:52.306] [DEBUG] sbm - UserSettingsInputs: John Doe
+[2020-04-11T13:03:52.306] [DEBUG] sbm - UserSettingsInputs: 41
+[2020-04-11T13:03:52.306] [DEBUG] sbm - UserSettingsInputs: Turku
+[2020-04-11T13:03:52.318] [INFO] sbm - SleepingBevaviourMonitor started.  StartDate is: 1586599432000 EndDate is: 1586667600000
+[2020-04-11T13:03:53.328] [INFO] sbm - Recording started because start and end dates were in date scale
+[2020-04-11T13:03:53.329] [DEBUG] sbm - User has awaken. WokeUps are: 0 wokeUpTimeTotal: 0 sleepingTotal: 0
+[2020-04-11T13:04:03.727] [DEBUG] sbm - UserSettingsInputs: 20:00:00
+[2020-04-11T13:04:03.730] [DEBUG] sbm - UserSettingsInputs: 08:00:00
+[2020-04-11T13:04:03.730] [DEBUG] sbm - UserSettingsInputs: John Doe
+[2020-04-11T13:04:03.730] [DEBUG] sbm - UserSettingsInputs: 41
+[2020-04-11T13:04:03.730] [DEBUG] sbm - UserSettingsInputs: Turku
+[2020-04-11T13:04:03.741] [INFO] sbm - SleepingBevaviourMonitor started.  StartDate is: 1586599443000 EndDate is: 1586667600000
+[2020-04-11T13:04:04.753] [INFO] sbm - Recording started because start and end dates were in date scale
+[2020-04-11T13:04:04.754] [DEBUG] sbm - User has awaken. WokeUps are: 0 wokeUpTimeTotal: 0 sleepingTotal: 0
+[2020-04-11T13:04:36.223] [DEBUG] sbm - UserSettingsInputs: 20:00:00
+[2020-04-11T13:04:36.225] [DEBUG] sbm - UserSettingsInputs: 08:00:00
+[2020-04-11T13:04:36.225] [DEBUG] sbm - UserSettingsInputs: John Doe
+[2020-04-11T13:04:36.226] [DEBUG] sbm - UserSettingsInputs: 41
+[2020-04-11T13:04:36.226] [DEBUG] sbm - UserSettingsInputs: Turku
+[2020-04-11T13:04:36.229] [INFO] sbm - SleepingBevaviourMonitor started.  StartDate is: 1586599476000 EndDate is: 1586667600000
+[2020-04-11T13:04:37.231] [INFO] sbm - Recording started because start and end dates were in date scale
+[2020-04-11T13:04:37.231] [DEBUG] sbm - User has awaken. WokeUps are: 0 wokeUpTimeTotal: 0 sleepingTotal: 0
