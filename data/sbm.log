@@ -305,3 +305,57 @@
 [2020-04-11T11:17:25.314] [INFO] sbm - uploading DONE: true
 [2020-04-11T11:17:35.315] [INFO] sbm - 10 second waiting DONE
 [2020-04-11T11:17:35.316] [INFO] sbm - updateCounter: 2
+[2020-04-11T11:26:40.368] [DEBUG] sbm - UserSettingsInputs: 20:00:00
+[2020-04-11T11:26:40.370] [DEBUG] sbm - UserSettingsInputs: 08:00:00
+[2020-04-11T11:26:40.370] [DEBUG] sbm - UserSettingsInputs: John Doe
+[2020-04-11T11:26:40.371] [DEBUG] sbm - UserSettingsInputs: 41
+[2020-04-11T11:26:40.371] [DEBUG] sbm - UserSettingsInputs: Turku
+[2020-04-11T11:26:40.388] [INFO] sbm - SleepingBevaviourMonitor started.  StartDate is: 1586593600000 EndDate is: 1586667600000
+[2020-04-11T11:26:41.390] [DEBUG] sbm - User has awaken. WokeUps are: 0 wokeUpTimeTotal: 0 sleepingTotal: 0
+[2020-04-11T11:28:44.443] [DEBUG] sbm - UserSettingsInputs: 20:00:00
+[2020-04-11T11:28:44.445] [DEBUG] sbm - UserSettingsInputs: 08:00:00
+[2020-04-11T11:28:44.445] [DEBUG] sbm - UserSettingsInputs: John Doe
+[2020-04-11T11:28:44.445] [DEBUG] sbm - UserSettingsInputs: 41
+[2020-04-11T11:28:44.445] [DEBUG] sbm - UserSettingsInputs: Turku
+[2020-04-11T11:28:44.458] [INFO] sbm - SleepingBevaviourMonitor started.  StartDate is: 1586593724000 EndDate is: 1586667600000
+[2020-04-11T11:28:45.459] [INFO] sbm - Recording started
+[2020-04-11T11:28:45.460] [DEBUG] sbm - User has awaken. WokeUps are: 0 wokeUpTimeTotal: 0 sleepingTotal: 0
+[2020-04-11T11:31:04.551] [DEBUG] sbm - UserSettingsInputs: 20:00:00
+[2020-04-11T11:31:04.554] [DEBUG] sbm - UserSettingsInputs: 08:00:00
+[2020-04-11T11:31:04.554] [DEBUG] sbm - UserSettingsInputs: John Doe
+[2020-04-11T11:31:04.554] [DEBUG] sbm - UserSettingsInputs: 41
+[2020-04-11T11:31:04.554] [DEBUG] sbm - UserSettingsInputs: Turku
+[2020-04-11T11:31:04.566] [INFO] sbm - SleepingBevaviourMonitor started.  StartDate is: 1586593864000 EndDate is: 1586667600000
+[2020-04-11T11:31:15.158] [DEBUG] sbm - UserSettingsInputs: 20:00:00
+[2020-04-11T11:31:15.160] [DEBUG] sbm - UserSettingsInputs: 08:00:00
+[2020-04-11T11:31:15.160] [DEBUG] sbm - UserSettingsInputs: John Doe
+[2020-04-11T11:31:15.160] [DEBUG] sbm - UserSettingsInputs: 41
+[2020-04-11T11:31:15.160] [DEBUG] sbm - UserSettingsInputs: Turku
+[2020-04-11T11:31:15.172] [INFO] sbm - SleepingBevaviourMonitor started.  StartDate is: 1586593875000 EndDate is: 1586667600000
+[2020-04-11T11:31:16.174] [INFO] sbm - Recording started because start and end dates were in date scale
+[2020-04-11T11:31:16.174] [DEBUG] sbm - User has awaken. WokeUps are: 0 wokeUpTimeTotal: 0 sleepingTotal: 0
+[2020-04-11T11:35:01.138] [DEBUG] sbm - UserSettingsInputs: 20:00:00
+[2020-04-11T11:35:01.141] [DEBUG] sbm - UserSettingsInputs: 08:00:00
+[2020-04-11T11:35:01.141] [DEBUG] sbm - UserSettingsInputs: John Doe
+[2020-04-11T11:35:01.141] [DEBUG] sbm - UserSettingsInputs: 41
+[2020-04-11T11:35:01.142] [DEBUG] sbm - UserSettingsInputs: Turku
+[2020-04-11T11:35:01.144] [INFO] sbm - SleepingBevaviourMonitor started.  StartDate is: 1586594101000 EndDate is: 1586667600000
+[2020-04-11T11:35:21.620] [INFO] sbm - Recording started because start and end dates were in date scale
+[2020-04-11T11:35:25.922] [DEBUG] sbm - User has awaken. WokeUps are: 0 wokeUpTimeTotal: 0 sleepingTotal: 0
+[2020-04-11T11:36:47.824] [DEBUG] sbm - UserSettingsInputs: 20:00:00
+[2020-04-11T11:36:47.826] [DEBUG] sbm - UserSettingsInputs: 08:00:00
+[2020-04-11T11:36:47.826] [DEBUG] sbm - UserSettingsInputs: John Doe
+[2020-04-11T11:36:47.827] [DEBUG] sbm - UserSettingsInputs: 41
+[2020-04-11T11:36:47.827] [DEBUG] sbm - UserSettingsInputs: Turku
+[2020-04-11T11:36:47.830] [INFO] sbm - SleepingBevaviourMonitor started.  StartDate is: 1586594207000 EndDate is: 1586667600000
+[2020-04-11T11:36:48.832] [INFO] sbm - Recording started because start and end dates were in date scale
+[2020-04-11T11:36:48.832] [DEBUG] sbm - User has awaken. WokeUps are: 0 wokeUpTimeTotal: 0 sleepingTotal: 0
+[2020-04-11T11:37:06.902] [INFO] sbm - await jsonArray.push ended as planned. 6
+[2020-04-11T11:37:08.812] [INFO] sbm - readWeatherData done: 6
+[2020-04-11T11:37:18.630] [INFO] sbm - getRaspberryData DONE: 11
+[2020-04-11T11:37:23.712] [INFO] sbm - About to update content to my.iot-ticket: [{"name":"station","v":"Turku Artukainen","path":"/sbm/weather"},{"name":"timestamp","v":"2020-04-11 11:20:00","path":"/sbm/weather"},{"name":"temperature","v":"6","path":"/sbm/weather","unit":"c"},{"name":"temperature_feels_like","v":"3","path":"/sbm/weather","unit":"c"},{"name":"pressure","v":"1022.9","path":"/sbm/weather","unit":"hPa"},{"name":"humidity","v":"55","path":"/sbm/weather","unit":"%"},{"name":"illumination","v":10000,"path":"/sbm/raspberry","unit":"lx"},{"name":"temperature","v":30,"path":"/sbm/raspberry","unit":"c"},{"name":"wokeUpTimes","v":0,"path":"/sbm/raspberry","unit":""},{"name":"sleepingTotal","v":1000,"path":"/sbm/raspberry","unit":""},{"name":"wokeUpTimeTotal","v":0,"path":"/sbm/raspberry","unit":""}]
+[2020-04-11T11:37:37.564] [INFO] sbm - Updates were send to my.iot-ticket
+[2020-04-11T11:37:52.561] [INFO] sbm - uploading DONE: true
+[2020-04-11T11:38:05.467] [INFO] sbm - 10 second waiting DONE
+[2020-04-11T11:38:09.726] [INFO] sbm - updateCounter: 1
+[2020-04-11T11:38:55.998] [INFO] sbm - await jsonArray.push ended as planned. 6

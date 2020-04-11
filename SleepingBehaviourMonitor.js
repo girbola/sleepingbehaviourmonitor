@@ -17,13 +17,15 @@ log4js.configure({
 const logger = log4js.getLogger('sbm');
 var raspberry = new Raspberry();
 var weather = new Weather();
+let firstRun = true;
 let https = require('https');
 let updateCounter = 0;
 
 let sleepingTotal = 0;
 let wokeUpsTotal = 0;
 let wokeUpTimeTotal = 0;
-const updateIotInterval = 1200000;
+// const updateIotInterval = 1200000;
+const updateIotInterval = 1200;
 let updateIotIntervalCounter = updateIotInterval;
 
 let cronRunning = true;
@@ -79,7 +81,7 @@ async function uploadDataToIoT(jsonArray, logger) {
 }
 
 async function UpdateData() {
-	
+
 	console.log('Updating to IoTTTTTTTTTTTTTTTTTTTTTT');
 	jsonArray = [];
 	// getWeatherData(jsonArray); 17:06:09.422
@@ -153,8 +155,12 @@ async function SleepingBehaviourMonitor() {
 		// startEndDateCheck();
 		if (valid) {
 			const currentTime = Date.parse(new Date());
-
 			if (currentTime >= startDate && currentTime <= endDate) {
+				if (firstRun) {
+					firstRun = false;
+					logger.info('Recording started because start and end dates were in date scale');
+					console.log('Recording started because start and end dates were in date scale');
+				}
 				setDataSychronized(false);
 				await HandleUser();
 				await HandleRaspberry();
@@ -178,6 +184,11 @@ async function SleepingBehaviourMonitor() {
 					);
 					console.log('Recording has ended for this day');
 				*/
+				if (firstRun) {
+					firstRun = false;
+					logger.info('Recording started but date were not in scale with start and end dates');
+					console.log('Recording started but date were not in scale with start and end dates');
+				}
 				if (!dataSynchronized) {
 					logger.info('data will be synchronized');
 
@@ -188,7 +199,7 @@ async function SleepingBehaviourMonitor() {
 					dataSynchronized = true;
 					InitNextDay();
 					logger.info(
-						'Next day has been initialized. StartDate is now: ' + startDate + ' ending date is: ' + endDate
+						'Next day has been initialized. StartDate is now: ' + Date(startDate) + ' ending date is: ' + endDate
 					);
 
 					// break;
