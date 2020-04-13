@@ -672,3 +672,10 @@
 [2020-04-13T08:00:12.443] [INFO] sbm - updateCounter: 64
 [2020-04-13T08:00:12.444] [INFO] sbm - ===Data synchronized and recording data has been paused
 [2020-04-13T08:00:12.446] [INFO] sbm - Next day has been initialized. StartDate is now: Mon Apr 13 2020 08:00:12 GMT+0300 (GMT+03:00) ending date is: 1586840400000
+[2020-04-13T11:01:58.531] [DEBUG] sbm - UserSettingsInputs: 20:00:00
+[2020-04-13T11:01:58.533] [DEBUG] sbm - UserSettingsInputs: 08:00:00
+[2020-04-13T11:01:58.533] [DEBUG] sbm - UserSettingsInputs: John Doe
+[2020-04-13T11:01:58.533] [DEBUG] sbm - UserSettingsInputs: 41
+[2020-04-13T11:01:58.533] [DEBUG] sbm - UserSettingsInputs: Turku
+[2020-04-13T11:01:58.546] [INFO] sbm - SleepingBevaviourMonitor started.  StartDate is: 1586797200000 EndDate is: 1586840400000
+[2020-04-13T11:01:59.557] [INFO] sbm - Recording started but date were not in scale with start and end dates
