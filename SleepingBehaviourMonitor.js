@@ -145,10 +145,7 @@ function InitNextDay() {
 	startDate = getNewStartDate();
 	endDate = getNewEndDate();
 }
-function startEndDateCheck() {
-	// if(startDate - endDate >=1hour) {
-	// }
-}
+
 async function SleepingBehaviourMonitor() {
 	let wokeUp = false;
 	let sleeping = true;
