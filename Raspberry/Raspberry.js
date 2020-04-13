@@ -1,5 +1,5 @@
 const SleepingBehaviourMonitor = require('../SleepingBehaviourMonitor');
-function Raspberry() {}
+function Raspberry() { }
 let illuminationArray = [
 	0,
 	0,
@@ -36,11 +36,15 @@ function ReadRaspberry_temperature() {
 }
 let temperature_Array = [];
 
+Raspberry.prototype.resetValues = async function () {
+	temperature_Array = [];
+}
+
 function average(array) {
 	const sum = array.reduce((a, b) => a + b, 0);
 	const avg = Math.round(sum / array.length) || 0;
 	console.log('Returning AVG: ' + avg);
-	if(array.length === 0) {
+	if (array.length === 0) {
 		return temperature;
 	}
 	return avg;

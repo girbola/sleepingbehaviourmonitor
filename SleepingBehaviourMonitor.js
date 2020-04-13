@@ -141,17 +141,19 @@ let endDate;
  * but if startDate is 2020-04-04 22:00 endDate 2020-04-04 08:00 = -14hours  it won't be a valid date range.
  */
 let valid = true;
-function InitNextDay() {
+
+async function InitNextDay() {
 	startDate = getNewStartDate();
 	endDate = getNewEndDate();
+	raspberry.resetValues();
 }
 
 async function SleepingBehaviourMonitor() {
 	let wokeUp = false;
 	let sleeping = true;
 	let timer = 1000;
-	// startDate = getNewStartDate();
-	startDate = Date.parse(new Date());
+	startDate = getNewStartDate();
+	// startDate = Date.parse(new Date());
 	endDate = getNewEndDate();
 	logger.info('SleepingBevaviourMonitor started. ' + ' StartDate is: ' + startDate + ' EndDate is: ' + endDate);
 	console.log('SleepingBevaviourMonitor started. ' + ' StartDate is: ' + startDate + ' EndDate is: ' + endDate);
@@ -204,7 +206,7 @@ async function SleepingBehaviourMonitor() {
 						logger.info('===Data synchronized and recording data has been paused');
 					}
 					dataSynchronized = true;
-					InitNextDay();
+					await InitNextDay();
 					logger.info(
 						'Next day has been initialized. StartDate is now: ' + Date(startDate) + ' ending date is: ' + endDate
 					);
