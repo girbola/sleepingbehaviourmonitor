@@ -1,5 +1,15 @@
 const SleepingBehaviourMonitor = require('../SleepingBehaviourMonitor');
+
 function Raspberry() { }
+
+// Sleeping simulator variables
+const sleepTimeInterval = 3600000;
+var sleepingTimer_SIM = sleepTimeInterval;
+ 
+const wokeUpTimeInterval = 600000;
+var wokeUpTimer_count_MAX_SIM = wokeUpTimeInterval;
+
+// Made up illumination array for simulating Rasberry according time 0-23
 let illuminationArray = [
 	0,
 	0,
@@ -19,28 +29,27 @@ let illuminationArray = [
 	6000,
 	5000,
 	3000,
+	2000,
 	1000,
-	0,
 	0,
 	0,
 	0,
 	0,
 ];
 let temperature = 30;
-
-const tempterature_min = 17;
-const tempterature_max = 23;
+let temperature_Array = [];
 
 function ReadRaspberry_temperature() {
 	return this.temperature;
 }
-let temperature_Array = [];
 
 Raspberry.prototype.resetValues = async function () {
 	temperature_Array = [];
+	wokeUpTimer_count_MAX_SIM = wokeUpTimeInterval;
+	sleepingTimer_SIM = sleepTimeInterval;
 }
 
-function average(array) {
+function calculateAverage(array) {
 	const sum = array.reduce((a, b) => a + b, 0);
 	const avg = Math.round(sum / array.length) || 0;
 	console.log('Returning AVG: ' + avg);
@@ -49,17 +58,6 @@ function average(array) {
 	}
 	return avg;
 }
-
-/* Sleeping simulator variables
- *
- */
-const sleepTimeInterval = 3600000;
-// const sleepTimeInterval = 4000;
-var sleepingTimer_SIM = sleepTimeInterval; //= 1h in milliseconds
-
-const wokeUpTimeInterval = 600000;
-// const wokeUpTimeInterval = 5000;
-var wokeUpTimer_count_MAX_SIM = wokeUpTimeInterval;
 
 Raspberry.prototype.Raspberry_simulation = async function (User, logger) {
 	if (sleepingTimer_SIM <= 0) {
@@ -115,7 +113,6 @@ Raspberry.prototype.getRaspberryData = async function (
 		let sleepingTotal = {};
 		let wokeUpTimeTotal = {};
 		const path = '/sbm/raspberry';
-		// print(date);
 
 		illumination.name = 'illumination';
 		illumination.v = illuminationArray[hour];
@@ -124,7 +121,7 @@ Raspberry.prototype.getRaspberryData = async function (
 		console.log('illumination name: ' + illumination.name + ' illumination.v ' + illumination.v + ' hour: ' + hour);
 
 		temperature.name = 'temperature';
-		temperature.v = average(temperature_Array);
+		temperature.v = calculateAverage(temperature_Array);
 		temperature.path = path;
 		temperature.unit = 'c';
 		console.log('temperature name: ' + temperature.name + ' temperature.v ' + temperature.v);

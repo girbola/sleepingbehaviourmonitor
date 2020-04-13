@@ -38,19 +38,16 @@ logger.debug('UserSettingsInputs: ' + UserSettingsInputs.location);
 let cancelled = false;
 let jsonArray = [];
 
+//In future to be able to cancel infinite loop by button click
 function isCancelled() {
 	return cancelled;
 }
+function setCancelled(value) {
+	cancelled = value;
+}
+module.exports = { isCancelled, setCancelled };
 
 async function uploadDataToIoT(jsonArray, logger) {
-	// new Promise((resolve, reject) => {
-	// 	resolve(getToken());
-	//  }).then(token =>{
-	// 	 //do you rest of the work
-	// 	 makeRequest(token);
-	//  }).catch(err =>{
-	// 	console.error(err)
-	//  })
 
 	let body = '';
 	var auth =
@@ -146,6 +143,12 @@ async function InitNextDay() {
 	startDate = getNewStartDate();
 	endDate = getNewEndDate();
 	raspberry.resetValues();
+	sleepingTotal = 0;
+	wokeUpsTotal = 0;
+	wokeUpTimeTotal = 0;
+	updateIotIntervalCounter = updateIotInterval;
+
+
 }
 
 async function SleepingBehaviourMonitor() {
@@ -179,20 +182,7 @@ async function SleepingBehaviourMonitor() {
 					await UpdateData();
 					updateIotIntervalCounter = updateIotInterval;
 				}
-
-				// await HandleWeather();
 			} else {
-				//Out of date scale
-				/*	console.log(
-						'current: ' +
-							currentTime +
-							' Date scale out of range : START: ' +
-							startDate +
-							' EEEEEEEND: ' +
-							endDate
-					);
-					console.log('Recording has ended for this day');
-				*/
 				if (firstRun) {
 					firstRun = false;
 					logger.info('Recording started but date were not in scale with start and end dates');
@@ -215,40 +205,21 @@ async function SleepingBehaviourMonitor() {
 				}
 			}
 		}
-		if (cancelled) {
+		if (isCancelled()) {
 			console.log('SBM cancelled');
 			break;
 		}
 	}
-	function dateChecker() { }
 	async function setDataSychronized(value) {
 		if (dataSynchronized != value) {
 			dataSynchronized = value;
 		}
 	}
-	async function sendAvailableDataToIoT() {
-		console.log(
-			'Syncronizing to IoT: sleepingTotal ' +
-			sleepingTotal +
-			' wokeUps: ' +
-			wokeUpsTotal +
-			' wokeUptotal ' +
-			wokeUpTimeTotal
-		);
-	}
+
 	async function HandleRaspberry() {
 		raspberry.Raspberry_simulation(User, logger);
+	}
 
-		// console.log(
-		// 	'getWokeUpTimer_count_MAX_SIM ' +
-		// 		raspberry.getWokeUpTimer_count_MAX_SIM() +
-		// 		' getSleepingTimer_SIM: ' +
-		// 		raspberry.getSleepingTimer_SIM()
-		// );
-	}
-	async function HandleWeather() {
-		//Uploading weather to IoT
-	}
 	async function HandleUser() {
 		switch (User.status) {
 			case 'sleeping':
@@ -321,6 +292,6 @@ function wait(ms) {
 	}
 }
 
+//Starts SBM monitoring
 SleepingBehaviourMonitor();
 
-module.exports = { isCancelled };
