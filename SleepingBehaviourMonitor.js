@@ -21,11 +21,13 @@ var raspberry = new Raspberry();
 var weather = new Weather();
 var userInput = new UserInput();
 let https = require('https');
+let updateCounter = 0;
 
 let sleepingTotal = 0;
 let wokeUpsTotal = 0;
 let wokeUpTimeTotal = 0;
 const updateIotInterval = 1200000;
+// const updateIotInterval = 1200;
 let updateIotIntervalCounter = updateIotInterval;
 
 let cronRunning = true;
@@ -34,16 +36,21 @@ logger.debug('UserSettingsInputs: ' + UserSettingsInputs.latestTimeToWakeUp);
 logger.debug('UserSettingsInputs: ' + UserSettingsInputs.name);
 logger.debug('UserSettingsInputs: ' + UserSettingsInputs.age);
 logger.debug('UserSettingsInputs: ' + UserSettingsInputs.location);
-logger.debug('UserSettingsInputs: ' + UserSettingsInputs.age);
 
 let cancelled = false;
 let jsonArray = [];
 
+//In future to be able to cancel infinite loop by button click
 function isCancelled() {
 	return cancelled;
 }
+function setCancelled(value) {
+	cancelled = value;
+}
+module.exports = { isCancelled, setCancelled };
 
 async function uploadDataToIoT(jsonArray, logger) {
+
 	let body = '';
 	var auth =
 		'Basic ' +
@@ -67,7 +74,7 @@ async function uploadDataToIoT(jsonArray, logger) {
 		//On end of the request, run what we need to
 		response.on('end', function () {
 			//Do Something with the data
-			console.log(body);
+			console.log('RESPONSE BODY IS: ' + body);
 		});
 	});
 	console.log('about to write req.write. jsonArray.length: ' + jsonArray.length);
@@ -107,25 +114,32 @@ async function UpdateData() {
 		logger.info('About to update content to my.iot-ticket: ' + JSON.stringify(jsonArray));
 
 		const uploading = await uploadDataToIoT(jsonArray, logger);
-		logger.info();
-		console.log('Uploading done: ' + uploading);
+		logger.info("uploading DONE: " + uploading);
+		console.log('Waiting 10 seconds');
 		wait(10000);
-		console.log('Updated');
+		logger.info('10 second waiting DONE');
+		console.log('10 second waiting DONE');
 	} else {
 		console.log('Not updating!');
 		logger.error('JSON array length were not >= 1. Length was: ' + jsonArray.length);
 	}
 	console.log('Jsonarray length is: ' + jsonArray.length);
-	i += 1;
-	console.log('i exe: ' + i);
+	updateCounter += 1;
+	logger.info('updateCounter: ' + updateCounter);
+	console.log('updateCounter: ' + updateCounter);
 	// return true;
 }
 function getHoursFromDate(date) {
-	if (date.getHours() * 60 + date.getMinutes() >= 91) {
-		return date.getHours() + 1;
+	let hour = date.getHours();
+	if (date.getMinutes() >= 31) {
+		if ((hour + 1) != 24) {
+			return date.getHours() + 1;
+		}
+		return 0;
 	}
 	return date.getHours();
 }
+
 let startDate;
 let endDate;
 /*
@@ -137,6 +151,13 @@ let valid = true;
 async function InitNextDay() {
 	startDate = getNewStartDate();
 	endDate = getNewEndDate();
+	raspberry.resetValues();
+	sleepingTotal = 0;
+	wokeUpsTotal = 0;
+	wokeUpTimeTotal = 0;
+	updateIotIntervalCounter = updateIotInterval;
+
+
 }
 
 async function SleepingBehaviourMonitor() {
@@ -153,6 +174,11 @@ async function SleepingBehaviourMonitor() {
 		if (valid) {
 			const currentTime = Date.parse(new Date());
 			if (currentTime >= startDate && currentTime <= endDate) {
+				if (firstRun) {
+					firstRun = false;
+					logger.info('Recording started because start and end dates were in date scale');
+					console.log('Recording started because start and end dates were in date scale');
+				}
 				setDataSychronized(false);
 				await HandleUser();
 				await HandleRaspberry();
@@ -163,16 +189,11 @@ async function SleepingBehaviourMonitor() {
 					updateIotIntervalCounter = updateIotInterval;
 				}
 			} else {
-				//Out of date scale
-				console.log(
-					'current: ' +
-						currentTime +
-						' Date scale out of range : START: ' +
-						startDate +
-						' EEEEEEEND: ' +
-						endDate
-				);
-				console.log('Recording has ended for this day');
+				if (firstRun) {
+					firstRun = false;
+					logger.info('Recording started but date were not in scale with start and end dates');
+					console.log('Recording started but date were not in scale with start and end dates');
+				}
 				if (!dataSynchronized) {
 					logger.info('data will be synchronized');
 
@@ -184,14 +205,14 @@ async function SleepingBehaviourMonitor() {
 					dataSynchronized = true;
 					await InitNextDay();
 					logger.info(
-						'Next day has been initialized. StartDate is now: ' + startDate + ' ending date is: ' + endDate
+						'Next day has been initialized. StartDate is now: ' + Date(startDate) + ' ending date is: ' + endDate
 					);
 
 					// break;
 				}
 			}
 		}
-		if (cancelled) {
+		if (isCancelled()) {
 			console.log('SBM cancelled');
 			break;
 		}
@@ -213,11 +234,11 @@ async function SleepingBehaviourMonitor() {
 					sleeping = true;
 					logger.debug(
 						'Sleeping. WokeUps are: ' +
-							wokeUpsTotal +
-							' wokeUpTimeTotal: ' +
-							wokeUpTimeTotal +
-							' sleepingTotal: ' +
-							sleepingTotal
+						wokeUpsTotal +
+						' wokeUpTimeTotal: ' +
+						wokeUpTimeTotal +
+						' sleepingTotal: ' +
+						sleepingTotal
 					);
 				}
 				sleepingTotal += 1000;
@@ -230,16 +251,24 @@ async function SleepingBehaviourMonitor() {
 					wokeUpsTotal += 1;
 					logger.debug(
 						'Sleeping ended. WokeUps are: ' +
-							wokeUpsTotal +
-							' wokeUpTimeTotal: ' +
-							wokeUpTimeTotal +
-							' sleepingTotal: ' +
-							sleepingTotal
+						wokeUpsTotal +
+						' wokeUpTimeTotal: ' +
+						wokeUpTimeTotal +
+						' sleepingTotal: ' +
+						sleepingTotal
 					);
 				}
 				wokeUpTimeTotal += 1000;
 				break;
 			case 'awake':
+				logger.debug(
+					'User has awaken. WokeUps are: ' +
+					wokeUpsTotal +
+					' wokeUpTimeTotal: ' +
+					wokeUpTimeTotal +
+					' sleepingTotal: ' +
+					sleepingTotal
+				);
 				break;
 			default:
 				break;
@@ -249,15 +278,14 @@ async function SleepingBehaviourMonitor() {
 function getNewStartDate() {
 	let today = new Date();
 	today = DateFunctions.parseOnlyDate(today) + ' ' + UserSettingsInputs.earliestTimeToSleep;
-	console.log('today ' + today);
+	console.log('Start date ' + today);
 	return Date.parse(today);
 }
 function getNewEndDate() {
 	let endDate = new Date();
 	endDate.setDate(endDate.getDate() + 1);
-	// endDate.setDate(endDate.getDate() + 0);
 	let pdate = DateFunctions.parseOnlyDate(endDate);
-	console.log('pdate: ' + pdate);
+	console.log('END date parseOnlyDate: ' + pdate);
 	endDate = pdate + ' ' + UserSettingsInputs.latestTimeToWakeUp;
 	console.log('enD ' + endDate);
 	return Date.parse(endDate);
@@ -270,7 +298,6 @@ function wait(ms) {
 	}
 }
 
+//Starts SBM monitoring
 SleepingBehaviourMonitor();
-// UpdateData();
 
-module.exports = { isCancelled };
