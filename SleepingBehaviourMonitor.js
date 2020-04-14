@@ -3,6 +3,8 @@ const properties = new PropertiesReader('./data/iot.properties');
 const Raspberry = require('./Raspberry/Raspberry');
 const Weather = require('./Weather/Weather');
 const User = require('./User/User');
+const UserInput = require('./User/UserInput');
+
 const UserSettingsInputs = require('./User/UserSettingsInputs');
 const DateFunctions = require('./DateFunctions');
 
@@ -17,6 +19,7 @@ log4js.configure({
 const logger = log4js.getLogger('sbm');
 var raspberry = new Raspberry();
 var weather = new Weather();
+var userInput = new UserInput();
 let https = require('https');
 
 let sleepingTotal = 0;
@@ -81,13 +84,11 @@ async function uploadDataToIoT(jsonArray, logger) {
 async function UpdateData() {
 	let i = 0;
 
-	console.log('Updating to IoTTTTTTTTTTTTTTTTTTTTTT');
+	console.log('Updating to IoT ticket');
 	jsonArray = [];
-	// getWeatherData(jsonArray); 17:06:09.422
 	const weatherRead = await weather.readWeatherData(jsonArray);
-	console.log('weatherRead done: ' + weatherRead);
+	console.log('weatherRead resolved: ' + weatherRead);
 
-	// getRaspberryData(sleepingTotal, wokeUpsTotal, wokeUpTimeTotal, getHoursFromDate(new Date()), jsonArray);
 	const rasp = await raspberry.getRaspberryData(
 		sleepingTotal,
 		wokeUpsTotal,
@@ -95,7 +96,11 @@ async function UpdateData() {
 		getHoursFromDate(new Date()),
 		jsonArray
 	);
-	console.log('rasp DONE: ' + rasp);
+	console.log('rasp resolved: ' + rasp);
+	
+	const userInput = await userInput.getUserInput(endDate, jsonArray);
+	console.log('userInput resolved: ' + userInput);
+	
 	console.log('Jsonarray length is: ' + jsonArray.length);
 	if (jsonArray.length >= 1) {
 		console.log('About to update');
@@ -108,6 +113,7 @@ async function UpdateData() {
 		console.log('Updated');
 	} else {
 		console.log('Not updating!');
+		logger.error('JSON array length were not >= 1. Length was: ' + jsonArray.length);
 	}
 	console.log('Jsonarray length is: ' + jsonArray.length);
 	i += 1;
@@ -128,31 +134,24 @@ let endDate;
  * but if startDate is 2020-04-04 22:00 endDate 2020-04-04 08:00 = -14hours  it won't be a valid date range.
  */
 let valid = true;
-function InitNextDay() {
+async function InitNextDay() {
 	startDate = getNewStartDate();
 	endDate = getNewEndDate();
 }
-function startEndDateCheck() {
-	// if(startDate - endDate >=1hour) {
-	// }
-}
+
 async function SleepingBehaviourMonitor() {
 	let wokeUp = false;
 	let sleeping = true;
-	let timer = 1000;
 	startDate = getNewStartDate();
-	// startDate = Date.parse(new Date());
+	// startDate = Date.parse(new Date()); // Running debugging
 	endDate = getNewEndDate();
 	logger.info('SleepingBevaviourMonitor started. ' + ' StartDate is: ' + startDate + ' EndDate is: ' + endDate);
 	console.log('SleepingBevaviourMonitor started. ' + ' StartDate is: ' + startDate + ' EndDate is: ' + endDate);
 	let dataSynchronized = true;
-	// for (;;) {
 	while (true) {
 		await new Promise((resolve) => setTimeout(resolve, 1000));
-		// startEndDateCheck();
 		if (valid) {
 			const currentTime = Date.parse(new Date());
-
 			if (currentTime >= startDate && currentTime <= endDate) {
 				setDataSychronized(false);
 				await HandleUser();
@@ -163,8 +162,6 @@ async function SleepingBehaviourMonitor() {
 					await UpdateData();
 					updateIotIntervalCounter = updateIotInterval;
 				}
-
-				// await HandleWeather();
 			} else {
 				//Out of date scale
 				console.log(
@@ -180,11 +177,12 @@ async function SleepingBehaviourMonitor() {
 					logger.info('data will be synchronized');
 
 					if (jsonArray.length >= 1) {
+
 						await UpdateData();
 						logger.info('===Data synchronized and recording data has been paused');
 					}
 					dataSynchronized = true;
-					InitNextDay();
+					await InitNextDay();
 					logger.info(
 						'Next day has been initialized. StartDate is now: ' + startDate + ' ending date is: ' + endDate
 					);
@@ -198,35 +196,15 @@ async function SleepingBehaviourMonitor() {
 			break;
 		}
 	}
-	function dateChecker() {}
 	async function setDataSychronized(value) {
 		if (dataSynchronized != value) {
 			dataSynchronized = value;
 		}
 	}
-	async function sendAvailableDataToIoT() {
-		console.log(
-			'Syncronizing to IoT: sleepingTotal ' +
-				sleepingTotal +
-				' wokeUps: ' +
-				wokeUpsTotal +
-				' wokeUptotal ' +
-				wokeUpTimeTotal
-		);
-	}
 	async function HandleRaspberry() {
 		raspberry.Raspberry_simulation(User, logger);
+	}
 
-		// console.log(
-		// 	'getWokeUpTimer_count_MAX_SIM ' +
-		// 		raspberry.getWokeUpTimer_count_MAX_SIM() +
-		// 		' getSleepingTimer_SIM: ' +
-		// 		raspberry.getSleepingTimer_SIM()
-		// );
-	}
-	async function HandleWeather() {
-		//Uploading weather to IoT
-	}
 	async function HandleUser() {
 		switch (User.status) {
 			case 'sleeping':
