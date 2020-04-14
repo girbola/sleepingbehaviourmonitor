@@ -180,8 +180,8 @@ async function SleepingBehaviourMonitor() {
 					console.log('Recording started because start and end dates were in date scale');
 				}
 				setDataSychronized(false);
-				await HandleUser();
-				await HandleRaspberry();
+				await HandleUserSimulation();
+				await HandleRaspberrySimulation();
 				updateIotIntervalCounter -= 1000;
 				if (updateIotIntervalCounter <= 0) {
 					console.log('UpdateDataaa');
@@ -222,11 +222,11 @@ async function SleepingBehaviourMonitor() {
 			dataSynchronized = value;
 		}
 	}
-	async function HandleRaspberry() {
+	async function HandleRaspberrySimulation() {
 		raspberry.Raspberry_simulation(User, logger);
 	}
 
-	async function HandleUser() {
+	async function HandleUserSimulation() {
 		switch (User.status) {
 			case 'sleeping':
 				if (wokeUp) {
