@@ -148,6 +148,7 @@ let endDate;
  * but if startDate is 2020-04-04 22:00 endDate 2020-04-04 08:00 = -14hours  it won't be a valid date range.
  */
 let valid = true;
+let firstRun = true;
 async function InitNextDay() {
 	startDate = getNewStartDate();
 	endDate = getNewEndDate();
