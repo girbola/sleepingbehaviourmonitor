@@ -26,11 +26,11 @@ let updateCounter = 0;
 let sleepingTotal = 0;
 let wokeUpsTotal = 0;
 let wokeUpTimeTotal = 0;
+// const updateIotInterval = 10000;
 const updateIotInterval = 1200000;
 // const updateIotInterval = 1200;
 let updateIotIntervalCounter = updateIotInterval;
 
-let cronRunning = true;
 logger.debug('UserSettingsInputs: ' + UserSettingsInputs.earliestTimeToSleep);
 logger.debug('UserSettingsInputs: ' + UserSettingsInputs.latestTimeToWakeUp);
 logger.debug('UserSettingsInputs: ' + UserSettingsInputs.name);
@@ -93,7 +93,7 @@ async function UpdateData() {
 
 	console.log('Updating to IoT ticket');
 	jsonArray = [];
-	const weatherRead = await weather.readWeatherData(jsonArray);
+	const weatherRead = await weather.readWeatherData(jsonArray, logger);
 	console.log('weatherRead resolved: ' + weatherRead);
 
 	const rasp = await raspberry.getRaspberryData(
@@ -105,8 +105,8 @@ async function UpdateData() {
 	);
 	console.log('rasp resolved: ' + rasp);
 	
-	const userInput = await userInput.getUserInput(endDate, jsonArray);
-	console.log('userInput resolved: ' + userInput);
+	const userInputData = await userInput.getUserInput(endDate, jsonArray);
+	console.log('userInput resolved: ' + userInputData);
 	
 	console.log('Jsonarray length is: ' + jsonArray.length);
 	if (jsonArray.length >= 1) {

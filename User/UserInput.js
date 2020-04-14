@@ -2,7 +2,7 @@ function UserInput() {}
 UserInput.prototype.getUserInput = async function(endDate, jsonArray) {
     return new Promise((resolve) => {
 		// let jsonArray = [];
-        console.log('JsonArray is: ' + typeof jsonArray);
+        console.log('endDate is : ' + endDate + ' JsonArray is: ' + typeof jsonArray);
      
 		let sleepingQuality = {};
 		let nightmares = {};
@@ -30,7 +30,7 @@ UserInput.prototype.getUserInput = async function(endDate, jsonArray) {
         wokeUpTimes.ts = endDate;
 		wokeUpTimes.path = path;
 		wokeUpTimes.unit = '';
-        console.log('wokeUpTimes name: ' + wokeUpTimes.name + ' wokeUpTimes.v ' + wokeUpTimes.v);
+        console.log('wokeUpTimes name: ' + wokeUpTimes.name + ' wokeUpTimes.ts ' + wokeUpTimes.ts);
 
         jsonArray.push(sleepingQuality, nightmares, wokeUpTimes);
         resolve(jsonArray.length);
