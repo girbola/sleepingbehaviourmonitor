@@ -25,7 +25,7 @@ Weather.prototype.readWeatherData = async function (jsonArray, logger) {
 				resolve(jsonArray.length);
 			}
 		});
-		// setTimeout
+
 		console.log('requesting: ' + weatherDataArray_tmp.length);
 	});
 };

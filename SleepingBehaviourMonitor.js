@@ -42,15 +42,18 @@ let jsonArray = [];
 
 //In future to be able to cancel infinite loop by button click
 function isCancelled() {
+	document.getElementById(userStatus).innerHTML = 'cancelled';
 	return cancelled;
 }
 function setCancelled(value) {
 	cancelled = value;
 }
+export function stop() {
+	cancelled = true;
+}
 module.exports = { isCancelled, setCancelled };
 
 async function uploadDataToIoT(jsonArray, logger) {
-
 	let body = '';
 	var auth =
 		'Basic ' +
@@ -104,17 +107,17 @@ async function UpdateData() {
 		jsonArray
 	);
 	console.log('rasp resolved: ' + rasp);
-	
+
 	const userInputData = await userInput.getUserInput(endDate, jsonArray);
 	console.log('userInput resolved: ' + userInputData);
-	
+
 	console.log('Jsonarray length is: ' + jsonArray.length);
 	if (jsonArray.length >= 1) {
 		console.log('About to update');
 		logger.info('About to update content to my.iot-ticket: ' + JSON.stringify(jsonArray));
 
 		const uploading = await uploadDataToIoT(jsonArray, logger);
-		logger.info("uploading DONE: " + uploading);
+		logger.info('uploading DONE: ' + uploading);
 		console.log('Waiting 10 seconds');
 		wait(10000);
 		logger.info('10 second waiting DONE');
@@ -132,7 +135,7 @@ async function UpdateData() {
 function getHoursFromDate(date) {
 	let hour = date.getHours();
 	if (date.getMinutes() >= 31) {
-		if ((hour + 1) != 24) {
+		if (hour + 1 != 24) {
 			return date.getHours() + 1;
 		}
 		return 0;
@@ -157,8 +160,6 @@ async function InitNextDay() {
 	wokeUpsTotal = 0;
 	wokeUpTimeTotal = 0;
 	updateIotIntervalCounter = updateIotInterval;
-
-
 }
 
 async function SleepingBehaviourMonitor() {
@@ -199,14 +200,16 @@ async function SleepingBehaviourMonitor() {
 					logger.info('data will be synchronized');
 
 					if (jsonArray.length >= 1) {
-
 						await UpdateData();
 						logger.info('===Data synchronized and recording data has been paused');
 					}
 					dataSynchronized = true;
 					await InitNextDay();
 					logger.info(
-						'Next day has been initialized. StartDate is now: ' + Date(startDate) + ' ending date is: ' + endDate
+						'Next day has been initialized. StartDate is now: ' +
+							Date(startDate) +
+							' ending date is: ' +
+							endDate
 					);
 
 					// break;
@@ -230,33 +233,35 @@ async function SleepingBehaviourMonitor() {
 	async function HandleUserSimulation() {
 		switch (User.status) {
 			case 'sleeping':
+				document.getElementById(userStatus).innerHTML = 'sleeping';
 				if (wokeUp) {
 					wokeUp = false;
 					sleeping = true;
 					logger.debug(
 						'Sleeping. WokeUps are: ' +
-						wokeUpsTotal +
-						' wokeUpTimeTotal: ' +
-						wokeUpTimeTotal +
-						' sleepingTotal: ' +
-						sleepingTotal
+							wokeUpsTotal +
+							' wokeUpTimeTotal: ' +
+							wokeUpTimeTotal +
+							' sleepingTotal: ' +
+							sleepingTotal
 					);
 				}
 				sleepingTotal += 1000;
 
 				break;
 			case 'wokeUp':
+				document.getElementById(userStatus).innerHTML = 'wokeUp';
 				if (sleeping) {
 					sleeping = false;
 					wokeUp = true;
 					wokeUpsTotal += 1;
 					logger.debug(
 						'Sleeping ended. WokeUps are: ' +
-						wokeUpsTotal +
-						' wokeUpTimeTotal: ' +
-						wokeUpTimeTotal +
-						' sleepingTotal: ' +
-						sleepingTotal
+							wokeUpsTotal +
+							' wokeUpTimeTotal: ' +
+							wokeUpTimeTotal +
+							' sleepingTotal: ' +
+							sleepingTotal
 					);
 				}
 				wokeUpTimeTotal += 1000;
@@ -264,11 +269,11 @@ async function SleepingBehaviourMonitor() {
 			case 'awake':
 				logger.debug(
 					'User has awaken. WokeUps are: ' +
-					wokeUpsTotal +
-					' wokeUpTimeTotal: ' +
-					wokeUpTimeTotal +
-					' sleepingTotal: ' +
-					sleepingTotal
+						wokeUpsTotal +
+						' wokeUpTimeTotal: ' +
+						wokeUpTimeTotal +
+						' sleepingTotal: ' +
+						sleepingTotal
 				);
 				break;
 			default:
@@ -300,5 +305,6 @@ function wait(ms) {
 }
 
 //Starts SBM monitoring
-SleepingBehaviourMonitor();
-
+export function start() {
+	SleepingBehaviourMonitor();
+}
