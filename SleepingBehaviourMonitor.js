@@ -88,7 +88,6 @@ async function uploadDataToIoT(jsonArray, logger) {
 	});
 	logger.info('Updates were send to my.iot-ticket');
 	return true;
-	jsonArray = [];
 }
 
 async function UpdateData() {
