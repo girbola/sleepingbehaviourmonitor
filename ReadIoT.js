@@ -7,14 +7,6 @@ let yesterday;
 let earliest_Sleeping;
 let latestwakeUpTime;
 
-// const fs = require('fs');
-// 'https://my.iot-ticket.com/api/v1/process/read/SnP7c1kZNBxmVk8q60Fm5?datanodes=sbm/weather/station,temperature,temperature_feels_like,timestamp,humidity&fromdate=1584720000&limit=20'fail
-// https://my.iot-ticket.com/api/v1/process/read/SnP7c1kZNBxmVk8q60Fm5?datanodes=sbm/weather/station,pressure,temperature,temperature_feels_like,timestamp,humidity,sbm/raspberry/illumination,sleepingTotal,Temperature,wokeUpTimes,wokeUpTimeTotal&fromdate=1585652400&limit=30
-
-// Näillä haetaan
-// https://my.iot-ticket.com/api/v1/process/read/SnP7c1kZNBxmVk8q60Fm5?datanodes=sbm/weather/station,pressure,temperature,temperature_feels_like,timestamp,humidity&fromdate=1585652400&limit=30
-// https://my.iot-ticket.com/api/v1/process/read/SnP7c1kZNBxmVk8q60Fm5?datanodes=sbm/raspberry/illumination,sleepingTotal,Temperature,wokeUpTimes,wokeUpTimeTotal&fromdate=1585652400&limit=30
-//,
 function fetchingData(startDate, endDate) {
 	console.log('Testi');
 
@@ -32,24 +24,22 @@ function fetchingData(startDate, endDate) {
 			},
 		}
 	)
-		.then(function(response) {
+		.then(function (response) {
 			//response is plain encoded text
 			if (response.status !== 200) {
 				console.log('Looks like there was a problem. Status Code: ' + response.status);
 				return;
 			}
 			//convert text to json
-			response.json().then(function(data) {
+			response.json().then(function (data) {
 				console.log('Dataaaa');
 				data.datanodeReads.map((value, key) => {
 					console.log('Valueee: ' + value);
-					value.values.map((v, i) => {
-						console.log('VVVVVVVVVVVVV: ' + v.v);
-					});
+					value.values.map((v, i) => {});
 				});
 			});
 		})
-		.catch(function(err) {
+		.catch(function (err) {
 			console.log('Fetch Error : ', err);
 		});
 }

@@ -1,7 +1,12 @@
+/**
+ * SleepingBehaviourMonitor is final project of Programming Engineering Project IoT. We did not got Raspberry Pi on time. I created simulation of Raspberry Pi and possible user who has to wake up every 1 hours to toilet and comes back after 10 minutes. Data will be collected every second but  only sending to Wapice Iot Ticket in every 2 hours because there are not an actual device to test with. This code can be run node SleepingBehaviourMonitor.js
+ */
 const PropertiesReader = require('properties-reader');
 const properties = new PropertiesReader('./data/iot.properties');
+
 const Raspberry = require('./Raspberry/Raspberry');
 const Weather = require('./Weather/Weather');
+
 const User = require('./User/User');
 const UserInput = require('./User/UserInput');
 
@@ -48,6 +53,11 @@ function isCancelled() {
 function setCancelled(value) {
 	cancelled = value;
 }
+// Starts SleepingBehaviourMonitor monitoring
+export function start() {
+	SleepingBehaviourMonitor();
+}
+// Stops SleepingBehaviourMonitor infinity loop
 export function stop() {
 	cancelled = true;
 }
@@ -301,9 +311,4 @@ function wait(ms) {
 	while (end < start + ms) {
 		end = new Date().getTime();
 	}
-}
-
-//Starts SBM monitoring
-export function start() {
-	SleepingBehaviourMonitor();
 }
