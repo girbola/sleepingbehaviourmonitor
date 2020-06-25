@@ -1,7 +1,7 @@
 /**
  SleepingBehaviourMonitor  
  This is final project of Programming Engineering Project IoT at Vaasa University of Applied of Science. 
- We did not get Raspberry Pi on time, so I created simulation for Raspberry Pi and possible user who
+ We did not got Raspberry Pi at time, so I created simulation for Raspberry Pi and possible user who
  is waking up every 1 hour to toilet and comes back after 10 minutes. Data will be collected 
  every second but sending data to Wapice Iot Ticket will be in every 2 hours. Normally there would
  be update happening more often but now there are no actual device to test with. 
