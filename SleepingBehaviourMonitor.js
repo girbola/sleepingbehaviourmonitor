@@ -110,11 +110,16 @@ async function uploadDataToIoT(jsonArray, logger) {
 	logger.info('Updates were send to my.iot-ticket');
 	return true;
 }
-
+/**
+ * Gets weather data,
+ * Gets raspBerry data,
+ * Gets possible user inputs
+ * Send everything to IoT Ticket
+ */
 async function UpdateData() {
 	let i = 0;
 
-	console.log('Updating to IoT ticket');
+	console.log('Updating data to IoT Ticket');
 	jsonArray = [];
 	const weatherRead = await weather.readWeatherData(jsonArray, logger);
 	console.log('weatherRead resolved: ' + weatherRead);
