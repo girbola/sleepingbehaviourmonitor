@@ -1,12 +1,10 @@
 const fetch = require('node-fetch');
 const request = require('request');
 
-//https://stackoverflow.com/questions/54635382/infinite-async-loops-using-setinterval
 async function execute1() {
 	let i = 0;
 	while (true) {
 		await new Promise((resolve) => setTimeout(resolve, 1000));
-
 		i += 1;
 		console.log('i exe: ' + i);
 	}
@@ -73,7 +71,7 @@ async function weatherTest() {
 		}
 		console.log('Resutl: ' + result.includes('No such city:') ? 'yes' : 'no');
 	} else {
-		console.log("Result were null!");
+		console.log('Result were null!');
 	}
 }
 weatherTest();
