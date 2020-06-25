@@ -1,5 +1,10 @@
 /**
- * SleepingBehaviourMonitor is final project of Programming Engineering Project IoT. We did not get Raspberry Pi on time and I created simulation for Raspberry Pi and possible user who has to wake up every 1 hours to toilet and comes back after 10 minutes. Data will be collected every second but  only sending to Wapice Iot Ticket in every 2 hours because there are not an actual device to test with. This code can be run node SleepingBehaviourMonitor.js
+ * SleepingBehaviourMonitor is final project of Programming Engineering Project IoT. We did not get Raspberry Pi on time, so I created simulation for Raspberry Pi and possible user who is waking up every 1 hour to toilet and comes back after 10 minutes. Data will be collected every second but sending data to Wapice Iot Ticket will be in every 2 hours. Normally there would be update happening more often but now there are no actual device to test with. 
+
+Usage
+Enter earliest possible time to go to bed and enter latest possible time to wake up.
+This code can be run with command node SleepingBehaviourMonitor.js
+
  */
 const PropertiesReader = require('properties-reader');
 const properties = new PropertiesReader('./data/iot.properties');
