@@ -19,7 +19,7 @@ const Raspberry = require('./Raspberry/Raspberry');
 const Weather = require('./Weather/Weather');
 
 const User = require('./User/User');
-const UserInput = require('./User/UserInput');
+const UserInput = require('./User/UserInput').default;
 
 const UserSettingsInputs = require('./User/UserSettingsInputs');
 const DateFunctions = require('./DateFunctions');
@@ -111,10 +111,10 @@ async function uploadDataToIoT(jsonArray, logger) {
 	return true;
 }
 /**
- * Gets weather data,
- * Gets raspBerry data,
+ * Gets Weather data,
+ * Gets RaspBerry data,
  * Gets possible user inputs
- * Send everything to IoT Ticket
+ * And sends all data to IoT Ticket asynchronously
  */
 async function UpdateData() {
 	let i = 0;
